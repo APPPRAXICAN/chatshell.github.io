@@ -453,7 +453,7 @@ $DB = new databaseHandler();?>
         <li><label class="userName" id="userNameLabel" style="margin-left:10px; color:black;"><?php echo $_SESSION['userName']; ?></label></li>
         <li><input type="text" class="searchBox" id="searchBox" placeholder="Search for persons...."></li>
         <li><button class="searchButton" id="searchButton"><img src="search.png" class="searchImg"></button></li>
-        <li><a href ="index.php" class="link">Logout</a></li>
+        <li><a href ="index.html" class="link">Logout</a></li>
         
     </ul>
     <div class="searchResult" id="searchResult">
