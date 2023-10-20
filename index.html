@@ -38,7 +38,7 @@
             color: black;
             padding: 30px;
             margin-top: -80px;
-        }
+        } 
         nav label {
             display:block;
             font-size:50px;
@@ -72,8 +72,12 @@
             background-color: rgb(27,27,27,0.5);
             height: auto;
             width: 80% ;
-            margin-left: 150px;
-            margin-top: 30px;
+           /* margin-left: 150px;
+            margin-top: 500px;
+            */position: absolute;
+            top: 110%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             border-radius: 10px;
         }
         .screen h2{
@@ -84,92 +88,123 @@
             color:rgb(210 , 224 , 224);
             margin-left:35px;
         }
-        .screen pre{
+        .screen h4{
             color: rgb(80,127,128);
-            font-size: large;
-            
+            font-size: large;   
+            margin-left: 20px;
+            padding-right: 20px;
         }
+
+        @media screen and (max-width: 822px){
+            div.screen{
+                transform: translate(-50%, -70%);
+            }
+        }
+        @media screen and (max-width: 770px){
+            div.screen{
+                transform: translate(-50%, -60%);
+            }
+        }
+        @media screen and (max-width: 420px){
+            div.screen{
+                transform: translate(-50%, -37%);
+            }
+        }
+        @media screen and (max-width: 391px){ /*iphone 12 pro*/
+            div.screen{
+                transform: translate(-50%, -31%);
+            }
+        }
+
+        @media screen and (max-width: 331px){
+            div.screen{
+                transform: translate(-50%, -18%);
+            }
+        }
+      
+
     </style>
     <nav>
         <ul>
             <li><label>Chatshell</label></li>
-            <li><a href="loginSite.php">login</a></li>
-            <li><a href="sginUp.php">register</a></li>
+            <li><a href="loginSite.php">Login</a></li>
+            <li><a href="sginUp.php">Register</a></li>
         </ul>
     </nav>
     <div class="screen">
         <div class="welcome">
             <h2>Welcome to Chatshell 0.1</h2>
-            <pre>
-                this is the first version of Chatshell that allows you to chat with your friends , teamate or anyone you want.
-                create your own shell and start chat, or join your friend's shell.
-                this website provides you an easy way to comunicate with people as you can search for people you like
-                 and invite them to join your shell,
-                also you can create as many shell as you want, and choose your members that you like.
-            </pre>
+            <h4>
+                this is the first version of Chatshell that allows you to chat with your friends , teamate or anyone you want.<br>
+                create your own shell and start chat, or join your friend's shell.<br>
+                this website provides you an easy way to comunicate with people as you can search for people you like<br>
+                and invite them to join your shell,<br>
+                also you can create as many shell as you want, and choose your members that you like.<br>
+            </h4>
         </div>
         <hr>
         <div class="auth-exp">
             <h2>Authentication System</h2>
             <h3>what is authentication system in Chatsell?</h3>
-            <pre>
-                it takes nothing to make an account in Chatshell, just your username, password, age and your gender,
-                we will take this information for searching purposes in the future updates,
-                to make an account in Chatshell make sure that
-                your username is uniqe and this helps us to make better search engine performance, 
-                also don't put any suspicious text like
-                XML injection or database injection, we have a good regex system to detect this. 
-            </pre>
+            <h4>
+                it takes nothing to make an account in Chatshell, just your username, password, age and your gender,<br>
+                we will take this information for searching purposes in the future updates,<br>
+                to make an account in Chatshell make sure that<br>
+                your username is uniqe and this helps us to make better search engine performance, <br>
+                also don't put any suspicious text like<br>
+                XML injection or database injection, we have a good regex system to detect this. <br>
+            </h4>
         </div>
         <hr>
         <div class="shell-exp">
             <h2>Shell System</h2>
             <h3>what is the shell system in Chatshell?</h3>
-            <pre>
-               shell is a place where you can comunicate with anyone, you can call it room or club or anything you like.
-               after you login you will find a button that has plus on it, this button allows you to create a new shell,
-               the popup form will apear automatically after you click on it, then you have to define the name of your shell
-               and the capacity of it, which means that how many people can join.
-            </pre>
+            <h4>
+               shell is a place where you can comunicate with anyone, you can call it room or club or anything you like.<br>
+               after you login you will find a button that has plus on it, this button allows you to create a new shell,<br>
+               the popup form will apear automatically after you click on it, then you have to define the name of your shell<br>
+               and the capacity of it, which means that how many people can join.<br>
+            </h4>
         </div>
         <hr>
         <div class="req-exp">
             <!--two type of requests {friend req , room req}-->
             <h2>Request System</h2>
             <h3>what is the request system in Chatshell?</h3>
-            <pre>
-                after searching for an accounts and clicked on it you will redirected to profile page of this account 
-                and you will see two kind of requests 
-                   1- Friend Request :
-                        it will send a friend request to the account you picked, 
-                        then the account will recieve the request and will accpet or deny it
-                   2- Room Request :
-                        if you choose room request the popup panel will appear automatically 
-                        and you will see your own shells which you created,
-                        then you have to pick one to send a request to the account that ask him to join the shell,
-                        if the account accept it he will see this 
-                        shell in the subscribed room panel at left of the home page.
-                        in your shell you will see the account in the member panel 
-                        and you can kick him out of the shell if you want as you are the admin of it.
-            </pre>
+            <h4>
+                after searching for an accounts and clicked on it you will redirected to profile page of this account <br>
+                and you will see two kind of requests <br>
+                   1- Friend Request :<br>
+                        it will send a friend request to the account you picked, <br>
+                        then the account will recieve the request and will accpet or deny it<br>
+                   2- Room Request :<br>
+                        if you choose room request the popup panel will appear automatically <br>
+                        and you will see your own shells which you created,<br>
+                        then you have to pick one to send a request to the account that ask him to join the shell,<br>
+                        if the account accept it he will see this <br>
+                        shell in the subscribed room panel at left of the home page.<br>
+                        in your shell you will see the account in the member panel <br>
+                        and you can kick him out of the shell if you want as you are the admin of it.<br>
+            </h4>
         </div>
         <hr>
         <div class="chat-exp">
             <!--ratchet broadcast-->
             <h2>Chat System</h2>
             <h3>what is the chat system in Chatshell?</h3>
-            <pre>
-                we use Ratchet websocket system and it a high level socket programming 
-                that allows you to send messages to other connecting people in the server 
-                but count on it, the collusion will occur as the message will broadcasting to all connections, 
-                so we designed a system to abstract each connection
-                with it's shell,to avoid collusion we make a dynamic connection id for each connection
-                that connects to the server in a specific shell so that 
-                the collusion will be unreachable.
-            </pre>
+            <h4>
+                we use Ratchet websocket system and it a high level socket programming <br>
+                that allows you to send messages to other connecting people in the server <br>
+                but count on it, the collusion will occur as the message will broadcasting to all connections, <br>
+                so we designed a system to abstract each connection<br>
+                with it's shell,to avoid collusion we make a dynamic connection id for each connection<br>
+                that connects to the server in a specific shell so that <br>
+                the collusion will be unreachable.<br>
+            </h4>
         </div>
         <hr>
     </div>
+
 
 
     
