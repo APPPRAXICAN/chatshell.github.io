@@ -3,212 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css"/>
     <title>Chatshell</title>
 </head>
 <body>
-    <style>
-        body::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Edge, Opera */
-        }
-        body{
-            margin: 0px;
-            padding:0px;
-            /*background-image:url("background.jpg") ;
-            background-repeat: no-repeat;
-            background-size: cover;*/
-            background-color: rgb(27,43,43);
-        }
-        ul{
-            list-style-type: none;
-            margin: 0;padding: 0;
-        }
-        li{
-            display: inline;
-        }
-        nav{
-            background-color: rgb(80,127,128);
-            padding:10px;
-            display: block;
-        }
-        nav a {
-            display: block;
-            float: right;
-            text-decoration: none;
-            font-size: xx-large;
-            color: black;
-            padding: 30px;
-            margin-top: -80px;
-        } 
-        nav label {
-            display:block;
-            font-size:50px;
-            color:black;
-            text-align: center;
-        }
-        div.title{
-            border-left: red 3px solid ;
-            width:300px;
-            align-self: center;
-            
-        }
-        nav img {
-            width:4%; 
-            display: block;
-            animation: shellAnimation 10s cubic-bezier(0.3,0.2,0.2,0.3)  infinite ;
-            
-        }
-        @keyframes shellAnimation {
-            0%{
-                transform: rotateY(0deg);
-            }
-            50%{
-                transform: rotateY(180degs);
-            }
-            100%{
-                transform: rotateY(360deg);
-            }
-        }
-        div.screen {
-            background-color: rgb(27,27,27,0.5);
-            height: auto;
-            width: 80% ;
-           /* margin-left: 150px;
-            margin-top: 500px;
-            */position: absolute;
-            top: 110%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 10px;
-        }
-        .screen h2{
-            color:rgb(210 , 224 , 224);
-            margin-left:15px;
-        }
-        .screen h3{
-            color:rgb(210 , 224 , 224);
-            margin-left:35px;
-        }
-        .screen h4{
-            color: rgb(80,127,128);
-            font-size: large;   
-            margin-left: 20px;
-            padding-right: 20px;
-        }
-
-        @media screen and (max-width: 822px){
-            div.screen{
-                transform: translate(-50%, -70%);
-            }
-        }
-        @media screen and (max-width: 770px){
-            div.screen{
-                transform: translate(-50%, -60%);
-            }
-        }
-        @media screen and (max-width: 420px){
-            div.screen{
-                transform: translate(-50%, -37%);
-            }
-        }
-        @media screen and (max-width: 391px){ /*iphone 12 pro*/
-            div.screen{
-                transform: translate(-50%, -31%);
-            }
-        }
-
-        @media screen and (max-width: 331px){
-            div.screen{
-                transform: translate(-50%, -18%);
-            }
-        }
-        @media screen and (max-width: 200px){/*sam A14*/
-            div.screen{
-                transform: translate(-50%, -8%);
-            }
-        }
-      
-
-    </style>
+    
     <nav>
+        <div>Chatshell</div>
         <ul>
-            <li><label>Chatshell</label></li>
             <li><a href="loginSite.php">Login</a></li>
             <li><a href="sginUp.php">Register</a></li>
         </ul>
     </nav>
-    <div class="screen">
-        <div class="welcome">
-            <h2>Welcome to Chatshell 0.1</h2>
-            <h4>
-                this is the first version of Chatshell that allows you to chat with your friends , teamate or anyone you want.<br>
-                create your own shell and start chat, or join your friend's shell.<br>
-                this website provides you an easy way to comunicate with people as you can search for people you like<br>
-                and invite them to join your shell,<br>
-                also you can create as many shell as you want, and choose your members that you like.<br>
-            </h4>
+    <div class="container">
+        <div class="screen">
+            <article>
+                <h2>Welcome to Chatshell 0.1</h2>
+                <h4>
+                    this is the first version of Chatshell that allows you to chat with your friends , teamate or anyone you want.<br>
+                    create your own shell and start chat, or join your friend's shell.<br>
+                    this website provides you an easy way to comunicate with people as you can search for people you like<br>
+                    and invite them to join your shell,<br>
+                    also you can create as many shell as you want, and choose your members that you like.<br>
+                </h4>
+            </article>
+            <hr>
+            <article>
+                <h2>Authentication System</h2>
+                <h3>what is authentication system in Chatsell?</h3>
+                <h4>
+                    it takes nothing to make an account in Chatshell, just your username, password, age and your gender,<br>
+                    we will take this information for searching purposes in the future updates,<br>
+                    to make an account in Chatshell make sure that<br>
+                    your username is uniqe and this helps us to make better search engine performance, <br>
+                    also don't put any suspicious text like<br>
+                    XML injection or database injection, we have a good regex system to detect this. <br>
+                </h4>
+            </article>
+            <hr>
+            <article>
+                <h2>Shell System</h2>
+                <h3>what is the shell system in Chatshell?</h3>
+                <h4>
+                   shell is a place where you can comunicate with anyone, you can call it room or club or anything you like.<br>
+                   after you login you will find a button that has plus on it, this button allows you to create a new shell,<br>
+                   the popup form will apear automatically after you click on it, then you have to define the name of your shell<br>
+                   and the capacity of it, which means that how many people can join.<br>
+                </h4>
+            </article>
+            <hr>
+            <article>
+                <!--two type of requests {friend req , room req}-->
+                <h2>Request System</h2>
+                <h3>what is the request system in Chatshell?</h3>
+                <h4>
+                    after searching for an accounts and clicked on it you will redirected to profile page of this account <br>
+                    and you will see two kind of requests <br>
+                       1- Friend Request :<br>
+                            it will send a friend request to the account you picked, <br>
+                            then the account will recieve the request and will accpet or deny it<br>
+                       2- Room Request :<br>
+                            if you choose room request the popup panel will appear automatically <br>
+                            and you will see your own shells which you created,<br>
+                            then you have to pick one to send a request to the account that ask him to join the shell,<br>
+                            if the account accept it he will see this <br>
+                            shell in the subscribed room panel at left of the home page.<br>
+                            in your shell you will see the account in the member panel <br>
+                            and you can kick him out of the shell if you want as you are the admin of it.<br>
+                </h4>
+            </article>
+            <hr>
+            <article>
+                <!--ratchet broadcast-->
+                <h2>Chat System</h2>
+                <h3>what is the chat system in Chatshell?</h3>
+                <h4>
+                    we use Ratchet websocket system and it a high level socket programming <br>
+                    that allows you to send messages to other connecting people in the server <br>
+                    but count on it, the collusion will occur as the message will broadcasting to all connections, <br>
+                    so we designed a system to abstract each connection<br>
+                    with it's shell,to avoid collusion we make a dynamic connection id for each connection<br>
+                    that connects to the server in a specific shell so that <br>
+                    the collusion will be unreachable.<br>
+                </h4>
+            </article>
+            <hr>
         </div>
-        <hr>
-        <div class="auth-exp">
-            <h2>Authentication System</h2>
-            <h3>what is authentication system in Chatsell?</h3>
-            <h4>
-                it takes nothing to make an account in Chatshell, just your username, password, age and your gender,<br>
-                we will take this information for searching purposes in the future updates,<br>
-                to make an account in Chatshell make sure that<br>
-                your username is uniqe and this helps us to make better search engine performance, <br>
-                also don't put any suspicious text like<br>
-                XML injection or database injection, we have a good regex system to detect this. <br>
-            </h4>
-        </div>
-        <hr>
-        <div class="shell-exp">
-            <h2>Shell System</h2>
-            <h3>what is the shell system in Chatshell?</h3>
-            <h4>
-               shell is a place where you can comunicate with anyone, you can call it room or club or anything you like.<br>
-               after you login you will find a button that has plus on it, this button allows you to create a new shell,<br>
-               the popup form will apear automatically after you click on it, then you have to define the name of your shell<br>
-               and the capacity of it, which means that how many people can join.<br>
-            </h4>
-        </div>
-        <hr>
-        <div class="req-exp">
-            <!--two type of requests {friend req , room req}-->
-            <h2>Request System</h2>
-            <h3>what is the request system in Chatshell?</h3>
-            <h4>
-                after searching for an accounts and clicked on it you will redirected to profile page of this account <br>
-                and you will see two kind of requests <br>
-                   1- Friend Request :<br>
-                        it will send a friend request to the account you picked, <br>
-                        then the account will recieve the request and will accpet or deny it<br>
-                   2- Room Request :<br>
-                        if you choose room request the popup panel will appear automatically <br>
-                        and you will see your own shells which you created,<br>
-                        then you have to pick one to send a request to the account that ask him to join the shell,<br>
-                        if the account accept it he will see this <br>
-                        shell in the subscribed room panel at left of the home page.<br>
-                        in your shell you will see the account in the member panel <br>
-                        and you can kick him out of the shell if you want as you are the admin of it.<br>
-            </h4>
-        </div>
-        <hr>
-        <div class="chat-exp">
-            <!--ratchet broadcast-->
-            <h2>Chat System</h2>
-            <h3>what is the chat system in Chatshell?</h3>
-            <h4>
-                we use Ratchet websocket system and it a high level socket programming <br>
-                that allows you to send messages to other connecting people in the server <br>
-                but count on it, the collusion will occur as the message will broadcasting to all connections, <br>
-                so we designed a system to abstract each connection<br>
-                with it's shell,to avoid collusion we make a dynamic connection id for each connection<br>
-                that connects to the server in a specific shell so that <br>
-                the collusion will be unreachable.<br>
-            </h4>
-        </div>
-        <hr>
     </div>
+   
 
 
 
