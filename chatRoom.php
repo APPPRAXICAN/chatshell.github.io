@@ -479,7 +479,11 @@ $DB->setConnectionID($_SESSION['userName'] , md5(uniqid())) ;
         userTitle.style.color = "rgb("+String(color[0])+","+String(color[1])+","+String(color[2])+")";
         let link = document.createElement('a');
         link.onclick=function(){
-            sendUserProfile(senderName);
+            if(type=="other"){
+                sendUserProfile(senderName);
+            }else{
+                link.href="profileEdit.php";
+            }
         };
         link.href="profile_show.php";
         let profileImg = document.createElement('img');
