@@ -8,11 +8,24 @@ $DB = new databaseHandler();?>
     <title>Document</title>
 
  <style>
+    * { 
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
     body{
-        background-color:rgb(27,43,43);
-        margin : 0px; 
-       /* border-left: 3px  solid yellow;
-        border-right:3px solid yellow;*/
+        background-color: rgb(27,43,43);
+    margin: 0px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+ 
+    }
+    @media (max-width:800px ) {
+        body { 
+            grid-template-columns: 1fr;
+        }
     }
     div.requestWarnMsgBack{
         background-color: rgb(80,127,128);
@@ -31,37 +44,24 @@ $DB = new databaseHandler();?>
         height: auto;
         background-color: rgb(27,43,43);
     }
-    ul.topPanel{
-        position: fixed;
-        list-style-type:none;
-        padding :0 ;
-        margin :0;
-        overflow: hidden;
-        width:100%;
-        border-bottom: 3px solid rgb(80,127,128);
-        border-left: 3px solid rgb(80,127,128);
-        border-right: 3px solid rgb(80,127,128);
+    .topPanel{
+        padding: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
         background-color: rgb(80,127,128);
+        grid-column: -1 / 1;
 
     }
-    li{
-        float:left;
+
+
+    .topPanel img { 
+        width: 50px;
+        height: 50px;
     }
-    li *{
-        display:block;
-        padding:15px;
-        text-align: center;
-        color: rgb(210 , 224 , 224);
-        text-decoration: none;
-        font-size: larger;
-    }
-    .link{
-        position: absolute;
-        right:0px;
+    .link {
         font-size: xx-large;
-        margin-top:0px;
         color :black;
-        padding-bottom: 28px;
         transition: background-color 0.5s;
         transition-timing-function: cubic-bezier(0.1,0.1,0.1,0.1) ;
     }
@@ -119,24 +119,21 @@ $DB = new databaseHandler();?>
             transform: rotateY(0deg);
         }
     }
+    .logo { 
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
     .img{
         border-radius: 50%;
-        width : 35% ;
+        /* width : 35% ; */
     }
     .userName{
-        margin-top: 10px;
-        position:absolute;
-        left :80px;
+
         font-size: xx-large;
     }
     .propertiesPanel{
-        position:fixed;
-        left: 0px;
-        top:80px;
         padding:10px;
-        height: 700px;
-        width: 280px;
-        z-index: 99;
         background-color: rgb(80,127,128);
     }
     .header1{
@@ -191,13 +188,9 @@ $DB = new databaseHandler();?>
         margin-left: 50px;
     }
     #buttonScreen{
-        position:absolute;
-        left:282px;
-        top:105px;
-        width:1179px;
-        height:678px;
+ 
         overflow: auto;
-        background-color: inherit;
+
         -ms-overflow-style: none;
     }
     div.buttonScreen::-webkit-scrollbar {
@@ -209,10 +202,9 @@ $DB = new databaseHandler();?>
         scrollbar-width: none; /* Firefox */
     }
 
-    div.linksPanel{
+    .linksPanel{
         background-color:rgb(27,43,43);
-        /*overflow: auto;
-        */margin-top:-20px;
+
         z-index: -1;
         /*-ms-overflow-style: none;*/
     }
@@ -220,7 +212,7 @@ $DB = new databaseHandler();?>
         background-color:rgb(27,43,43);
         height: auto;
         -ms-overflow-style: none;
-        margin-top:-15px;
+        margin-top:20px;
     }
     div.roomZone{
         background-color:rgb(27,43,43);
@@ -228,7 +220,7 @@ $DB = new databaseHandler();?>
         height: auto;
         max-height: 210px;
         -ms-overflow-style: none;
-        margin-top:5px;
+        margin-top:20px;
     }
     div.roomZone h2 {
         color:rgb(80,127,128) ; 
@@ -242,41 +234,36 @@ $DB = new databaseHandler();?>
         overflow: auto;
     }
     .searchBox{
+        /* position: relative; */
+        display: flex;
+        background-color: black;
+    }   
+    .search { 
         width:400px;
-        margin-top: 10px;
-        margin-left: 330px;
-        text-align: left;
-        background-color: rgb(27,27,27,0.3);
+        height: 100%;
+        background-color: rgb(27,43,43);
         color: rgb(210 , 224 , 224);
         border: none;
-        position: fixed;
-        border-right: 1px solid rgb(27,43,43);
+        border-right: 1px solid rgb(80,127,128);
+        font-size: x-large;
+        
     }
     .searchImg{
-        width:70px;
-        height: 70px;
-        position: absolute;
-        top:-5px;
-        /*right: 435px;*/
-        margin-left: -20px; 
+       
     }
     .searchButton{
-        background-color: rgb(27,27,27,0.3);
+        background-color: rgb(27,43,43);
         height:52px;
         width: 60px;
         border: none;
-        margin-left:730px;
-        position: fixed;
-       /* right:443px;*/
-        margin-top: 10px;
         overflow: hidden;
         cursor: pointer;
     }
     div.searchResult{
-        position: relative;
+        position: absolute;
         display: none;
-        top:65px;
-        left:563px;
+        top:50px;
+        left:auto;
         width:400px;
         height: 300px;
         max-height: 600px;
@@ -360,6 +347,7 @@ $DB = new databaseHandler();?>
         max-height: 400px;
         background-color: rgb(80,127,128);
         display : none;
+        z-index: 99;
     }
     div.requestsPanel h2{
         text-align: center;
@@ -419,7 +407,7 @@ $DB = new databaseHandler();?>
         background-color:rgb(27,43,43);
         overflow: auto;
         margin-bottom:5px;
-        margin-top: -20px;
+   
     }
     div.friendBlock{
         display:flex;
@@ -448,21 +436,24 @@ $DB = new databaseHandler();?>
 
 </head>
 <body >
-    <ul class="topPanel">
-        <li><img src="<?php echo $DB->getUserProfileImage($_SESSION['userName']); ?>"class ='img'></li>
-        <li><label class="userName" id="userNameLabel" style="margin-left:10px; color:black;"><?php echo $_SESSION['userName']; ?></label></li>
-        <li><input type="text" class="searchBox" id="searchBox" placeholder="Search for persons...."></li>
-        <li><button class="searchButton" id="searchButton"><img src="search.png" class="searchImg"></button></li>
-        <li><a href ="index.html" class="link">Logout</a></li>
+    <div class="topPanel">
+        <div class="logo">
+            <img src="<?php echo $DB->getUserProfileImage($_SESSION['userName']); ?>"class ='img'>
+            <label class="userName" id="userNameLabel"><?php echo $_SESSION['userName']; ?></label>
+        </div>
+        <div class="searchBox">
+            <input type="text" class="search" id="searchBox" placeholder="Search for persons....">
+            <button class="searchButton" id="searchButton"><img src="search.png" class="searchImg"></button>
+            <div class="searchResult" id="searchResult"></div>
+
+        </div>
+        <a href ="index.html" class="link">Logout</a>
         
-    </ul>
-    <div class="searchResult" id="searchResult">
+</div>
 
     </div>
         
-    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method ="POST">
-        
-    </form>
+
     <div class='propertiesPanel'>
         <div class='linksPanel'>
             <h2 class='header1'>Properties</h2>

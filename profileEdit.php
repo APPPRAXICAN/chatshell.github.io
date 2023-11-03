@@ -10,29 +10,32 @@
 <style>
     body{
         background-color: rgb(27,43,43);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    *{
+        box-sizing: border-box;
     }
     div.main {
-        position: absolute;
-        top:0px;
-        left:300px;
-        width: 800px;
-        height: 1200px;
-        margin-bottom : 30px;
-        padding-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 70%;
+        gap: 32px;
         background-color: rgb(80,127,128);
     }
     div.imagePanel{
-        position: absolute;
-        left :30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center; 
         border-radius: 0% 0% 35% 35%;
         width:300px;
         height: 500px;
         background-color: rgb(27,43,43);
         box-shadow: 10px 10px 10px rgb(27,43,43);
-       /* animation-name: baxShadowAnimation;
-        animation-duration: 5s;
-        animation-iteration-count: infinite;
-        animation-timing-function: cubic-bezier(0.1,0.1,0.1,0.1);*/
     }
     @keyframes baxShadowAnimation {
         0%{
@@ -45,36 +48,30 @@
         }
     }
     img{
-        position: inherit;
+        /* position: inherit;
         top:250px;
-        left: 50px;
+        left: 50px; */
         border-radius: 50%;
     }
     
     div.informationPanel{
-        padding:5px;
-        position: absolute;
-        margin:15px;
-        top :500px;
-        left:50px;
-        width:80%;
-        height: 650px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding:52px;
+        margin:39px;
+        width: 83%;
         background-color: rgb(27,43,43);
         
     }
     label{
         font-size: xx-large;
         display: block;
-        margin-top: 20px;
-        margin-left: 30px;
         color:rgb(80,127,128);
     }
     input[type='text']{
         font-size: x-large;
         padding:5px;
-        margin:5px;
-        margin-left:35px;
-        width: 500px;
         background-color: lightgray;
         border:none;
     }
@@ -82,10 +79,9 @@
         font-size: larger;
         padding:15px;
         border:none;
+        width: 66px;
         background-color:rgb(80,127,128);
-        margin:10px;
-        margin-top: 10px;
-        margin-left:50px;
+        /* margin-left:113px; */
         border-radius: 10%;
     }
     div.roomsContainer{
@@ -128,8 +124,8 @@
         background-color: rgb(27,43,43); 
         display: none;
         position:absolute;
-        top:300px;
-        left:200px;
+        top:750px;
+        left:430px;
     }
     div.warnMsg h2{
         color:red;
@@ -152,7 +148,7 @@
         <img src="<?php echo $DB->getUserProfileImage($_SESSION['userName']);?>" class="img">
     </div>
     <div class='informationPanel' id="informationPanel">
-        <label style="margin-top:70px">Username:</label><br>
+        <label >Username:</label><br>
         <input type ="text" readonly name="userName" value="<?php echo $_SESSION['userName'] ?>">
         <br>
         <label>password:</label><br>
@@ -163,11 +159,12 @@
         <input type="text" name="age" id="ageBox"  value="<?php echo $DB->getUserAge($_SESSION['userName'])?>"><br>
         <label class="warn" id="Agewarn">d</label>
         <br>
-        <label style="margin-top: 7px;">Gender:</label><br>
+        <label >Gender:</label><br>
         <input type="text" name="gender" readonly value="<?php echo $DB->getUserGender($_SESSION['userName'])?>">
         <br>
-        <input type="submit" id="edit" name="edit" value="Edit" style="margin-left:270px;">
-        
+        <div style="display: flex; justify-content:center ; align-items:center;">
+            <input type="submit" id="edit" name="edit" value="Edit" >
+        </div>
     </div>
     <?php
        // print_r($_SESSION);

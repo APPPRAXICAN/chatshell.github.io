@@ -14,36 +14,40 @@ session_start();
 </head>
 <body>
     <style>
-        div * ::-webkit-scrollbar {
+         * ::-webkit-scrollbar {
             display: none; /* Chrome, Safari, Edge, Opera */
         }
+        *{
+            box-sizing: border-box;
+        }
 
-        div * {
+         * {
             -ms-overflow-style: none; /* IE and Edge */
             scrollbar-width: none; /* Firefox */
         }
         body{
+            display: flex;
+            align-items: stretch;
+            gap:30px;
+            /*justify-content: centr;*/ 
             margin:0px;
             padding:0px;
             background-color: /*rgb(27,27,27)*/ rgb(27,43,43);
         }
         div.roomInfo{
             background-color: rgb(80,127,128) ; 
-            height: 795px ; 
-            min-width:25% ; 
-            position: absolute;
-            /*top:0px;
-            left:0px;*/
-            margin-top: 0px;
-            margin-left: 0px;
-            padding-right:110px;
+            display: flex;
+            flex-direction: column;
+            gap:10px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            width: 324px;
+            height: 100vh;    
         }
         div.roomInfo button{
             background-color: rgb(27,43,43);
             padding : 10px;
-            width :150px;
-            margin-top: -5px;
-            margin-left: 120px;
             font-size: larger;
             color:rgb(210 , 224 , 224);
         }
@@ -52,36 +56,30 @@ session_start();
         }
         .imgPanel{
             position: relative;
-            /*top:0px;
-            left:100px;*/
-            margin-top: 0px;
-            margin-left: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background-color: /*rgb(27,27,27)*/ rgb(27,43,43);
-            padding:20px;
+            padding:60px;
             border-radius: 0 0 10% 10%;
             height: 230px;
-            width:100px;
         }
         .imgPanel a{
             position :absolute;
             bottom:10px;
-            
         }
         .imgPanel img{
             border-radius: 50%;
             width:100px;
-            
         }
         div.info{
-            position: relative;
-            /*top:300px;*/
             background-color: rgb(27,43,43);
-            min-width:20%;
-            /*margin:15px;*/
-            margin-top:10px; /*300px;*/
-            margin-left:45px;
-            width:80%;
-            height: auto;
+            display: flex;
+            flex-direction: column;
+            flex-wrap:wrap ;
+            justify-content: space-between;
+            align-items: center;
+            padding:10px;
             overflow: auto;
         }
         div.info h2{
@@ -90,32 +88,29 @@ session_start();
             border-bottom: 2px solid rgb(80,127,128);
         }
         div.grandPanel{
-            position: absolute;
-            /*top:20px;
-            right:250px;*/
-            margin-top: 0px;
-            margin-left: 388px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: normal;
             width:1085px;
-            height:100%; /*755px;*/
             background-color:rgb(27,43,43);
 
         }
         div.header{
-            position: inherit;
-            top:0px;
-            padding:0px;
-            width:inherit;/*1070px;*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
             background-color:rgb(27,43,43);
-            /*border-bottom: 2px solid orangered;*/
         }
         div.header h1{
             text-align: center;
             color:rgb(210 , 224 , 224);
         }
         div.chatScreen{
-            margin-top: 20px;
+            /* margin-top: 20px;
             margin-left:50px;
-            width:91%;
+            width:91%;*/
             height: 641px;
             background-color: lightsteelblue ; 
             border-radius: 2%;
@@ -123,43 +118,35 @@ session_start();
             padding-top: 50px;
         }
         div.typingPanel{
-            margin-top:0 /*41px*/;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background-color:rgb(27,43,43);
             padding:10px;
         }
         div.typingPanel textarea{
-            width:80%;
-            height: 40px;
             background-color:lightsteelblue;
             border: none;
-            margin-left:80px;
             font-size: x-large;
-            padding:10px;
             max-width: 80%;
             min-width: 80%;
             max-height: 40px;
             min-height: 40px;
         }
         button.submitBtn {
-            position: absolute;
-            padding:10px;
-            padding-top: 11px;
-            top: 671px;
-            margin-left: 0px;
-            margin-top: 50px;
-            display: inline;
             border: none;
             border-radius: 0%;
             background-color: rgb(80,127,128);
             cursor: pointer;
         }
         button.submitBtn img {
-                width:35px;
+                width:34px;
         }
         div.subscriberBlock{
             display: flex;
             border-top: 1px solid rgb(210 , 224 , 224);
             padding:3px;
+            width:250px;
         }
         div.subscriberBlock img{
             width: 60px;
@@ -201,10 +188,11 @@ session_start();
             border:none;
         }
         div.informationPanel{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
             background-color: rgb(27,43,43);
-            margin-top: -5px;
             width:80%;
-            margin-left: 45px;
         }
         div.informationPanel h3{
             margin-left: 10px;

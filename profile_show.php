@@ -10,30 +10,30 @@
 <style>
     body{
         background-color: rgb(27,43,43);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     div.main {
-        position: absolute;
-        top:0px;
-        left:300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: 800px;
-        height: 1200px;
+        /* height: 1200px; */
         background-color: rgb(27, 27, 27 , 0.5);
-        margin-bottom : 30px;
-        padding-bottom: 30px;
         background-color: rgb(80,127,128);
     }
     div.imagePanel{
-        position: absolute;
-        left :30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
         border-radius: 0% 0% 35% 35%;
         width:300px;
         height: 500px;
         background-color: rgb(27,43,43);
         box-shadow: 10px 10px 10px rgb(27,43,43);
-        /*animation-name: baxShadowAnimation;
-        animation-duration: 5s;
-        animation-iteration-count: infinite;
-        animation-timing-function: cubic-bezier(0.1,0.1,0.1,0.1);*/
     }
     @keyframes baxShadowAnimation {
         0%{
@@ -53,29 +53,24 @@
     }
     
     div.informationPanel{
-        padding:5px;
-        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding:25px;
         margin:15px;
-        top :500px;
-        left:50px;
         width:80%;
-        height: 600px;
         background-color: rgb(27,43,43);
         
     }
     label{
         font-size: xx-large;
-        display: block;
-        margin-top: 20px;
-        margin-left: 30px;
         color:rgb(80,127,128);
     }
     input[type='text']{
         font-size: x-large;
         padding:5px;
-        margin:5px;
-        margin-left:35px;
-        width: 500px;
+        width: 94%;
         background-color: lightgray;
         border:none;
     }
@@ -83,10 +78,8 @@
         font-size: larger;
         padding:15px;
         border:none;
-        background-color: rgb(80,127,128);
-        margin:15px;
-        margin-top: 50px;
-        margin-left:50px;
+        background-color: rgb(80,127,128);   
+        margin: 10px;
     }
     div.roomsContainer{
         width:350px;
@@ -141,7 +134,7 @@
         <img src="<?php echo $DB->getUserProfileImage($_SESSION['userProfile']);?>" class="img">
     </div>
     <div class='informationPanel' id="informationPanel">
-        <label style="margin-top:70px">Username:</label><br>
+        <label >Username:</label><br>
         <input type ="text" readonly name="userName" value="<?php echo $_SESSION['userProfile'] ?>">
         <br>
         <label>Age:</label><br>
@@ -150,8 +143,10 @@
         <label>Gender:</label><br>
         <input type="text" name="gender" readonly value="<?php echo $DB->getUserGender($_SESSION['userProfile'])?>">
         <br>
-        <input type="submit" id="addFriendBtn" name="friendBtn" value="+add Friend">
-        <input type="submit" id="addToRoomBtn" name="addToRoom" value="Invite to Room" style="margin-left:200px;">
+        <div style="display: flex;justify-content:space-between; align-items:center;width:94%;flex-wrap:wrap;">
+            <input type="submit" id="addFriendBtn" name="friendBtn" value="+add Friend">
+            <input type="submit" id="addToRoomBtn" name="addToRoom" value="Invite to Room">    
+        </div>
         <div class='roomsContainer' id='roomsContainer'>
             <div class="container" id="container">
             </div>
@@ -228,6 +223,9 @@
             data:{fromRoom:from , toUser:to},
             success:function(data){
                 displayMsg('room request sent') ; 
+            },
+            error:function(xhr , status , error){
+                console.log(error);
             }
         });
     });// already sent condition 
@@ -268,6 +266,9 @@
                                 }else{
                                     sendRoomRequest(roomName ,toUser);
                                 }
+                            },
+                            error:function(xhr , status , error){
+                                console.log(error);
                             }
                         })
                     });
