@@ -2,7 +2,7 @@
 class databaseHandler {
     private $srvr = 'localhost';
     private $usrname = 'root';
-    private $password = '01006059030app';
+    private $password = '';
     private $databaseName ='chatroom';
     private $con ; 
     function __construct()
